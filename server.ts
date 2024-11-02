@@ -7,7 +7,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     try {
-        const posts = db.prepare("SELECT * FROM posties").all()
+        const posts = db.prepare("SELECT * FROM posts").all()
         res.json({message: 'Hello world', posts })
     } catch (e) {
         res.status(500).json({error: 'Something went wrong'})
